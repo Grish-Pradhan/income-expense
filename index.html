@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Income & Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <h1>💸 Income & Expense Tracker</h1>
+
+    <!-- Mode section -->
+    <div class="controls">
+      <button id="modeToggle">🌙 Toggle Mode</button>
+      <button id="exportBtn">Export to CSV</button>
+    </div>
+
+    <!-- Income Section -->
+    <div class="card glass">
+      <h2>Add Income</h2>
+      <input type="text" id="incomeSource" placeholder="💼 Source (e.g. Salary)" />
+      <input type="number" id="incomeAmount" placeholder="💰 Amount" />
+      <button onclick="addIncome()">➕ Add Income</button>
+    </div>
+
+    <!-- Expense Section -->
+    <div class="card glass">
+      <h2>Add Expense</h2>
+      <input type="text" id="topic" placeholder="📝 Topic (e.g. Food)" />
+      <input type="number" id="cost" placeholder="💵 Cost per item" />
+      <input type="number" id="times" placeholder="🔁 How many times?" />
+      <button onclick="addExpense()">➕ Add Expense</button>
+    </div>
+
+    <!-- Totals -->
+    <div class="card glass totals">
+      <p><strong>Total Income:</strong> $<span id="totalIncome">0</span></p>
+      <p><strong>Total Spent:</strong> $<span id="totalSpent">0</span></p>
+      <p><strong>Remaining:</strong> $<span id="remaining">0</span></p>
+    </div>
+
+    <!-- Chart Options -->
+    <div class="card glass">
+      <label for="chartType">📊 Choose Chart Type</label>
+      <select id="chartType" onchange="updateChart()">
+        <option value="bar">Bar Chart</option>
+        <option value="pie">Pie Chart</option>
+      </select>
+    </div>
+
+    <!-- Chart Canvas -->
+    <div class="chart-card glass">
+      <canvas id="expenseChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

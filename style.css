@@ -1,0 +1,134 @@
+/* ================================
+   🌗 THEME VARIABLES
+   ================================ */
+
+   :root {
+    /* Dark Mode - default values */
+    --bg-color: linear-gradient(135deg, #1f1c2c, #928dab); /* page background */
+    --card-bg: rgba(255, 255, 255, 0.08); /* card/input background */
+    --text-color: #fff; /* text color */
+    --input-bg: rgba(255, 255, 255, 0.2); /* input background */
+    --btn-color: #00c9a7; /* button color */
+    --btn-hover: #00b894; /* button hover color */
+  }
+  
+  .light-mode {
+    /* Light Mode override */
+    --bg-color: linear-gradient(135deg, #f0f0f0, #fff);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #222;
+    --input-bg: #f0f0f0;
+    --btn-color: #007bff;
+    --btn-hover: #0056b3;
+  }
+  
+  /* ================================
+     🌍 GLOBAL STYLES
+     ================================ */
+  
+  body {
+    margin: 0;
+    padding: 30px 15px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .app-container {
+    max-width: 700px;
+    width: 100%;
+  }
+  
+  /* ================================
+     📛 TITLE
+     ================================ */
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+  
+  /* ================================
+     🎛️ CONTROL BUTTONS (Top)
+     ================================ */
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  /* ================================
+     💳 CARD COMPONENTS
+     ================================ */
+  
+  .card, .chart-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover, .chart-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* ================================
+     🧾 INPUTS, SELECTS & BUTTONS
+     ================================ */
+  
+  input, select, button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    font-size: 1rem;
+    background: var(--input-bg);
+    color: var(--text-color);
+  }
+  
+  input::placeholder {
+    color: #ccc;
+  }
+  
+  button {
+    background-color: var(--btn-color);
+    margin-top: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--btn-hover);
+  }
+  
+  /* ================================
+     🧮 TOTAL SPENT & REMAINING
+     ================================ */
+  
+  .totals {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  /* ================================
+     📊 CHART CANVAS
+     ================================ */
+  
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
