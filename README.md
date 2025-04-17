@@ -1,4 +1,4 @@
-# Income %Expense Tracker Frontend
+# Income & Expense Tracker Frontend
 
 ## Overview
 
