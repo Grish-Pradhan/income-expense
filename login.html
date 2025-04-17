@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Expense Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>🔐 Login</h1>
+    <div class="card glass">
+      <form id="loginForm">
+        <input type="email" placeholder="Email" name="email" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="register.html">Register</a></p>
+      </form>
+    </div>
+    <button class="mode-toggle" onclick="toggleMode()">🌗 Toggle Mode</button>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    // Theme persistence
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+</body>
+</html>
