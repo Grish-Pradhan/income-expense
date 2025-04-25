@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BudgetMate – Master Your Money</title>
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --success: #00b894;
+      --light-bg: #f5f6fa;
+      --light-text: #2d3436;
+      --dark-bg: #1e1e1e;
+      --dark-text: #f5f6fa;
+      --card-bg: #fff;
+      --card-bg-dark: #2c2c2c;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-bg);
+      color: var(--light-text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    header {
+      background: #fff;
+      padding: 1.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark header {
+      background: #2a2a2a;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 40px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 600;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: transparent;
+      font-weight: 600;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+
+    .hero .buttons a {
+      padding: 0.8rem 1.5rem;
+      margin: 0 0.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+    }
+
+    .btn-login {
+      background: var(--primary);
+    }
+
+    .btn-register {
+      background: var(--success);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 4rem 3rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: background 0.3s;
+    }
+
+    body.dark .feature-card {
+      background: var(--card-bg-dark);
+    }
+
+    .feature-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #fff;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    body.dark footer {
+      background: #2a2a2a;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo1.png" alt="BudgetMate Logo" />
+      <span class="logo-text">BudgetMate</span>
+    </div>
+    <nav>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Master Your Money, The Smart Way</h1>
+    <p>Welcome to BudgetMate – Your all-in-one personal finance dashboard. Track expenses, create budgets, and gain full control of your financial life.</p>
+    <div class="buttons">
+      <a href="login.html" class="btn-login">Login</a>
+      <a href="register.html" class="btn-register">Get Started</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>📊 Real-Time Insights</h3>
+      <p>Track your expenses and income in real-time with beautiful charts and graphs.</p>
+    </div>
+    <div class="feature-card">
+      <h3>💡 Smart Budgeting</h3>
+      <p>Create monthly budgets, set goals, and get intelligent tips to save more.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔐 Secure & Private</h3>
+      <p>All your data is encrypted and stored securely — only you can access it.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📁 Easy Export</h3>
+      <p>Export your financial reports in CSV or PDF formats for your own records.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 BudgetMate. Designed with 💜 for smarter finance.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const isDark = body.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    // Load theme from localStorage on page load
+    window.onload = () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+      }
+    };
+  </script>
+</body>
+</html>
